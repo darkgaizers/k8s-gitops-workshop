@@ -20,10 +20,10 @@ const vpc = awsx.ec2.Vpc.fromExistingIds('k8s-gitops-workshop', {
 const cluster = new eks.Cluster('k8s-gitops-workshop', {
   vpcId: vpc.id,
   subnetIds: vpc.publicSubnetIds,
-  instanceType: 't3.small',
-  desiredCapacity: 1,
-  minSize: 1,
-  maxSize: 1,
+  instanceType: 't3.large',
+  desiredCapacity: 2,
+  minSize: 2,
+  maxSize: 2,
   name: `k8s-gitops-workshop${postfix}`,
   providerCredentialOpts: {
     profileName,
