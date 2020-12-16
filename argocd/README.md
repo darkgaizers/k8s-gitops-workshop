@@ -1,5 +1,13 @@
 # Argo CD
 
+## 0. Prerequisite
+
+Change directory first.
+
+```bash
+cd argocd
+```
+
 ## 1. Setup Repository Credentials
 
 ### 1.1. Add ssh key to repository
@@ -76,6 +84,9 @@ Follows the [Login Using The CLI](https://argoproj.github.io/argo-cd/getting_sta
 instruction.
 
 ### 3.3. Additional Configs
+
+In `argocd-cm.yaml` change `data.repositories.url` from 'SCGWEDOtech/k8s-gitops-workshop'
+to '<YOUR_GITHUB_USERNAME>/k8s-gitops-workshop'.
 
 All additonal configurations are gathered by kustomize (`kustomization.yaml`),
 including the repository credential secret.
