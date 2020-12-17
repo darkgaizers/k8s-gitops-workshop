@@ -62,7 +62,10 @@ stringData:
 
 ```bash
 kubectl apply -f controller/namespace.yaml
+
 kubectl apply -k controller
+# if the above fails, use this instead:
+kustomize build controller | kubectl apply -f-
 ```
 
 ## 3. Configure ArgoCD Server
@@ -116,5 +119,5 @@ For more detail, please visit the argo's `kind: Application` reference:
 
 ```bash
 OVERLAY=ap-southeast-1
-kubectl apply -f application/$OVERLAY
+kubectl apply -f applications/$OVERLAY
 ```
